@@ -13,6 +13,7 @@ This guide will help you deploy the application using Docker Compose.
    ```
    git clone <repository-url>
    cd <project-directory>
+   add application-secret.properties in src/main/resources/ (the value redacted in assignment submission comment, please kindly check!)
    ```
 
 2. **Review and Modify Environment Variables** (if needed)
