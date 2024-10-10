@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Email</title>
+</head>
+<body>
+<h1>Halo, <span th:text="${fullname}">FullName</span>!</h1>
+<p>Harap konfirmasikan email kamu dengan memasukkan kode di bawah ini</p>
+<p>Kode: <strong th:text="${otp}">000000</strong></p>
+</body>
+</html>

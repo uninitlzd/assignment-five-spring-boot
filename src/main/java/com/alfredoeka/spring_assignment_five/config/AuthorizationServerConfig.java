@@ -10,6 +10,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -44,15 +45,38 @@ public class AuthorizationServerConfig {
         return http.build();
     }
 
-//    @Bean
-//    @Order(2)
-//    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-//        http
-//            .authorizeHttpRequests((authorize) -> authorize
-//                    .anyRequest().authenticated()
-//            );
-//        return http.build();
-//    }
+    @Bean
+    @Order(2)
+    public SecurityFilterChain resourceServerSecurityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .securityMatcher("/api/**")
+                .authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/api/v1/karyawan/**").authenticated()
+                        .anyRequest().permitAll()
+                )
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        ;
+
+        return http.build();
+    }
+
+    @Bean
+    @Order(3)
+    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/user-register", "/send-otp").permitAll()
+                        .requestMatchers("/forgot-password/send", "/forgot-password/validate", "/forgot-password/change-password").permitAll()
+                        .requestMatchers("/register-confirm-otp/**").permitAll()
+                        .requestMatchers("/user-login/login", "/user-login/signin_google_url", "/user-login/signin_google", "/oauth2callback").permitAll()
+                        .requestMatchers("/v1/upload", "/v1/showFile/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .csrf(csrf -> csrf.disable());
+
+        return http.build();
+    }
 
     @Bean
     public AuthorizationServerSettings authorizationServerSettings() {
@@ -60,21 +84,8 @@ public class AuthorizationServerConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder()
-    {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user-login").permitAll()
-                        .anyRequest().authenticated()
-                )
-                .csrf(csrf -> csrf.disable());
-
-        return http.build();
     }
 
     @Bean
