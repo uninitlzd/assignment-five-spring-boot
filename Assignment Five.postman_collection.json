@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "8b66f4a1-99f3-4952-8b95-99376ee4bd83",
+		"name": "Assignment Five",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35389",
+		"_collection_link": "https://bold-meadow-5625.postman.co/workspace/Local~47584721-b8c3-4351-b46d-faaf6217cde1/collection/35389-8b66f4a1-99f3-4952-8b95-99376ee4bd83?action=share&source=collection_link&creator=35389"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign In Google Get URl",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user-login/signin_google_url",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user-login",
+								"signin_google_url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In Google",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accessToken\": \"4/0AVG7fiR1_NtwwO7FxF4CsBLJ-rDwpKL360oJTOSLMesMNfPy1o4VPUaf7Qul-Yjalzrq3g\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user-login/signin_google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user-login",
+								"signin_google"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign In Google",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"accessToken\": \"4/0AVG7fiT5hES8BbQRcj7bJKJdKxbjcqKvYHNIb5y3ieB79vG_jwPTPbdwEJO1CwNVkm7FYw\"\n}\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3002/user-login/signin_google",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"user-login",
+										"signin_google"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"access_token\": \"eyJraWQiOiI3OTY2NGJkMi1mZDljLTQ1YmMtYTkzMi01YWJhMDkzNjA2NTgiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhbGZyZWRvd2lib3dvQGdtYWlsLmNvbSIsImF1ZCI6Im15LWNsaWVudC13ZWIiLCJuYmYiOjE3Mjg0NTgwODEsInNjb3BlIjpbIndyaXRlIiwicmVhZCJdLCJleHAiOjE3Mjg0NTgzODEsImlhdCI6MTcyODQ1ODA4MSwianRpIjoiNTdlMmJmNDEtNDVkMy00MzM3LWJkOGUtMTkyNjI5MGNmYTZmIn0.kYRJPR2i8OYIRI2ISugPtRLwDjWejlIq0-q0A_SofhM9ucJDGgCuKk5-jaOuR6Q8fQWi-yx4TiT-GrGuUdaat1DukV7OE9b1pOsYTpcild2XPpJIun8HKN2UklTaL7tJpvMa1pQXDvfa92SGveTpZbc9APpVKuQ4dSluQok2VrqcWxxt_q2_Uf2aZ66_tPxAosPdoYTkQ2sIeXmV1ZxteYu43N8Jb4AzgVCWhsmekGAafqXMEDqHwXKyRz-eEkOWxTfoLPZMA0p6cCokcXzGy6LE5PyfzxnrftOsirDg4tUpGpKs5BMumzt9wtFwArOhBndRBeVTYN-zs_ucGWBhDQ\",\n        \"refresh_token\": \"2XU8swzknA019sjUx1aEss-baG1CioCeXiUrg-oM8jdtM3UPnceOU0FkHg8rzeey409ijjj9-iX7mav-hrgAOkDroW6_a7EroHMd9psTFsK8ILkL2SeI_sSxZyp7kkv3\",\n        \"scope\": \"write read\",\n        \"token_type\": \"Bearer\",\n        \"expires_in\": 300,\n        \"jti\": \"207f7eec-b508-4ea3-b2c4-5ad2fb541b95\"\n    },\n    \"message\": \"Success\",\n    \"type\": \"login\",\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usertest2@gmail.com\",\n    \"fullname\": \"Edo\",\n    \"password\": \"password\",\n    \"phoneNumber\": \"082120101222\",\n    \"domicile\": \"Arab\",\n    \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user-register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user-register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"usertest2@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/register-confirm-otp/642558",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"register-confirm-otp",
+								"642558"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Confirm OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"alfredowibowo@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3002/register-confirm-otp/838995",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"register-confirm-otp",
+										"838995"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"Akun anda sudah aktif. Silahkan melakukan login\",\n    \"message\": \"Success\",\n    \"status\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usertest2@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/send-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"send-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"usertest2@gmail.com\",\n    \"password\": \"password1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/user-login/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"user-login",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"alfredowibowo@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/forgot-password/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"forgot-password",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password Validate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"alfredowibowoa@gmail.com\",\n    \"otp\": \"9089221\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/forgot-password/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"forgot-password",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password Change",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"alfredowibowo@gmail.com\",\n    \"otp\": \"908922\",\n    \"newPassword\": \"123456\",\n    \"confirmNewPassword\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/forgot-password/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"forgot-password",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "File Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/edo/Desktop/Screenshot 2024-09-29 at 18.02.26.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Uploaded File",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/showFile/file139793522616000.png",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"showFile",
+								"file139793522616000.png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Karyawan",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama\": \"John\",\n    \"dob\": \"1996-01-01\",\n    \"status\": \"active\",\n    \"alamat\": \"jakarta\",\n    \"detailKaryawan\": {\n        \"nik\": \"123455-22\",\n        \"npwp\": \"12345677\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/idstar/karyawan/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiIyMmUzOWY0YS1lZTk3LTQ2ZTctYjZkMy1kMDhlM2ZmMTIyMDciLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhbGZyZWRvd2lib3dvQGdtYWlsLmNvbSIsImF1ZCI6Im15LWNsaWVudC13ZWIiLCJuYmYiOjE3Mjg0NTY0NjgsInNjb3BlIjpbIndyaXRlIiwicmVhZCJdLCJleHAiOjE3Mjg0NTY3NjgsImlhdCI6MTcyODQ1NjQ2OCwianRpIjoiMjdmY2IxNWUtYzllOC00NmJhLTk5ZWYtNDg2MDU5MTVlMjI3In0.C94KfiCiqE0e5qEdjT54NfHEjSsHQcO5j0kNu6ySidhautgzcX1mRgTfoLLenyXeKoJRtzMC15JUedcycgLW-o7xPOwl3ngVLOv6LqARNX1UQNDej1cMuc1ieBQ2Bev6vcDa_AMCEHayvTpIHGVXHppWj0pib5emHSh8sqwXjAPLKJC-H_cToYO718mbfkzny3ugZ6vr8it9bR8QDUMT8PBgzH7-If2qZubjzEtfM0rS7f6xUFvN5I6KQTY7_FmLbrETYenUCISGGMNHiHoTVz4dXOHiRVchErYjqNEpHoCZwfpaX5au4eXR1PHCWFoJhOwznzP1sIrnz9JojzqMWA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/api/v1/karyawan/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"v1",
+								"karyawan",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/idstar/karyawan/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"nama\": \"syarini\",\n    \"dob\": \"1996-01-01\",\n    \"status\": \"active\",\n    \"alamat\": \"jakarta\",\n    \"detailKaryawan\": {\n        \"id\": 1,\n        \"nik\": \"123455-11\",\n        \"npwp\": \"12345677\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/idstar/karyawan/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/idstar/karyawan/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"idstar",
+								"karyawan",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
